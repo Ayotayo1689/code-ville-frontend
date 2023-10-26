@@ -1,0 +1,407 @@
+
+
+.dash-main{
+     padding: 20px;
+}
+.nav-username{
+    font-size:25px;
+    font-weight:600;
+}
+.edit-user{
+    margin-top: 50px;
+    background-color: #026156;
+    border: none;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    border-radius: 6px;
+    
+}
+.edit-card{
+    margin-top: 10px;
+    background-color: #026156;
+    border: none;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.dash-big-flex{
+    /* border: 2px solid green; */
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+.profile-box{
+    /* border: 2px solid red; */
+    display: flex;
+    gap: 20px;
+    height: 100%;
+    /* border-radius: 10px; */
+    /* background:#d4fefe80; */
+}
+.card-num{
+    font-size:20px;
+    font-weight:500;
+    color:rgb(226, 226, 226);
+    margin-top:30px;
+}
+.card-name-info{
+    display:flex;
+    justify-content:space-between;
+    width:80%;
+}
+.visa-logo{
+    width:20%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.cardholder{
+    width:55%;
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+
+}
+.exp{
+    width:35%;
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+
+}
+.bank-card{
+
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+    width: 100%;
+    height: 80%;
+    max-width: 300px;
+    padding:15px;
+    /* background:url(./images/curved14.jp); */
+    background-image: linear-gradient(310deg, #1417279a 0%, #3a416f9a 100%), url(../images/curved14.jpg);
+    border-radius: 15px;
+}
+.info-name{
+    color:rgb(161, 161, 161);
+    font-weight:600;
+    font-size:14px;
+}
+.info-data{
+    color:rgb(255, 255, 255);
+    font-weight:600;
+    font-size:18px;
+}
+.profile-info-box{
+    background:#d4fefe80;
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    gap: 35px;
+    flex-direction: column;
+    border-radius: 10px;
+    /* border: 2px solid rgb(17, 0, 255); */
+}
+.profile-pic{
+    max-width: 300px;
+    max-height: 250px;
+    margin: 0 auto;
+}
+.pic{
+    /* border: 2px solid rgb(208, 255, 0); */
+    padding: 10px 20px;
+    flex: 1;
+}
+.profile-pic-container{
+    border-radius: 10px;
+    /* border: 2px solid green; */
+    flex: 1;
+    background:#d4fefe80;
+    /* overflow: hidden; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.card{
+    padding: 20px;
+    flex: 1;
+}
+.profile-info{
+    display:flex;
+    align-items: center;
+    gap: 20px;
+    color: rgb(49, 49, 49);
+    font-weight: 500;
+}
+.label{
+ font-size: 30px;
+ color: #026156;
+ font-weight: 600;
+}
+.info{
+    font-size: 20px;
+}
+/* .visa-logo{
+
+} */
+.red{
+    width:25px;
+    height:25px;
+    position:relative;
+    left:5px;
+    border-radius:50%;
+    background:rgba(255, 0, 0, 0.815);
+
+}
+.orange{
+    width:25px;
+    height:25px;
+    position:relative;
+    border-radius:50%;
+    background:rgba(255, 166, 0, 0.808);
+    right:5px;
+
+}
+
+
+
+.Dashtopnav{
+    background:none;
+    border-radius:4px;
+    height:fit-content;
+    width:100%;
+    padding:10px;
+    display:flex;
+    flex-direction: column;
+    padding:0 20px;
+    /* align-items:center; */
+    justify-content:space-between;
+}
+.dash-nav{
+    position: relative;
+    background: white;
+    padding: 10px 10px 10px 20px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    transition-duration: 1s ease;
+}
+.dash-big{
+    height:100vh;
+    flex: 4;
+    padding: 20px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.dash-big::-webkit-scrollbar {
+    display: none;
+  }
+.dash{
+    background: #F5F5F5;
+    width: 100%;
+    display: flex;
+}
+.parent-box{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+.user-box{
+    flex: 1;
+    min-width: 130px;
+    height: 100px;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:  #6D6969;
+    background: white;
+}
+.user-num{
+    font-size: 16px;
+}
+.box-title{
+    font-size: 30px;
+    font-weight: 600;
+    text-align:center;
+    color:  rgb(0, 0, 0);
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+.dash-nav a, .Link{
+    width: 100%;
+    padding: 15px;
+    display:flex;
+    gap:10px;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    border-bottom: 0.3px solid rgb(244, 244, 244);
+
+}
+.dash-nav a:hover, .Link:hover{
+    background: #f8f8f8;
+    border-radius: 8px;
+    color: #134E4A;
+}
+
+.inactive{
+    color: #A5A5A5;
+}
+
+.active{
+    color: white;
+    background: #134E4A;
+    border-radius: 8px;
+}
+
+
+.Link{
+    position:absolute;
+    bottom:20px;
+}
+
+
+
+.text-box{
+    max-width: 100%;
+    flex: 2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    /* min-width: 400px; */
+    height: 300px;
+    padding: 10px 10px 10px 0;
+    border-radius: 8px;
+    background: #fff;
+
+}
+.text-box-pie{
+    flex: 1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position: relative;
+    height: 300px;
+    padding: 10px 10px 10px 0;
+    border-radius: 8px;
+    background: #fff;
+}
+.pie-amount{
+    position: absolute;
+}
+.small{
+    font-size: 16px;color: #6D6969;
+}
+.circle{
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.amount{
+    font-size: 20px;
+    font-weight: 600;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+}
+.head{
+    font-weight: 500;
+    font-size: 20px;
+}
+th, td{
+    margin-left: 20px;
+}
+.dash-x{
+    display: none;
+    cursor: pointer;
+    
+    
+}
+.dash-ham{
+    display: none;
+    cursor: pointer;
+    z-index: 1;
+}
+@media only screen and (max-width:884px) {
+    .table-container{
+        width: 100%;
+        overflow-y: visible; /* Hide horizontal scrollbar */
+  overflow-x: scroll;
+
+        min-height: 95vh;
+    }
+  table{
+    width: 800px;
+  }
+        .text-box{
+           width: 95vw;
+        }
+    .box-title{
+        font-size: 16px;
+    }
+    .user-num{
+        text-align: center;
+    }
+    .dash-nav{
+        width: 250px;
+        background: #f1f1f1;
+        z-index: 1;
+        position: absolute;
+    }
+    .dash-nav-open{
+        left: -250px;
+    }
+    .dash-ham svg{
+       width: 100%;
+       color: aqua;
+       
+    }
+    .dash-ham{
+        position: fixed;
+        border: 2px solid rgb(177, 248, 217);
+        margin: 20px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        border-radius: 50%;
+        background: #b4ffea3a;
+    }
+    .dash-x{
+        display: block;
+        position: absolute;
+        left: 220px;
+    }
+    .profile-box{
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width:500px) {
+    .text-box{
+        min-width: 100%;
+    }
+    
+}
