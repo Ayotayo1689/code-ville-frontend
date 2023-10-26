@@ -392,7 +392,7 @@ export default function Electricity() {
 
             <div className="" style={{display:"flex", gap:"20px"}}>
 
-              <div  style={{flex:1, minWidth:"200px"}}>
+              <div  className="task-row">
                <h4 style={{marginBottom:"10px", paddingLeft:"20px"}}> Open</h4>
                {data.map((task, index)=>
                 task.state === "open" && (
@@ -422,7 +422,7 @@ export default function Electricity() {
                 )
                )}
               </div>
-              <div  style={{flex:1, minWidth:"200px"}}>
+              <div  className="task-row">
                 <h4 style={{marginBottom:"10px", paddingLeft:"20px"}}>In-Progress</h4>
                 {data.map((task, index)=>
                 task.state === "in-progress" && (
@@ -453,7 +453,7 @@ export default function Electricity() {
                )}
                 
               </div>
-              <div  style={{flex:1, minWidth:"200px"}}>
+              <div  className="task-row">
                <h4 style={{marginBottom:"10px", paddingLeft:"20px"}}> Done</h4>
                {data.map((task, index)=>
                 task.state === "done" && (
@@ -483,7 +483,7 @@ export default function Electricity() {
                 )
                )}
               </div>
-              <div  style={{flex:1, minWidth:"200px"}}>
+              <div  className="task-row">
                 <h4 style={{marginBottom:"10px", paddingLeft:"20px"}}>Tested</h4>
                 {data.map((task, index)=>
                 task.state === "tested" && (
