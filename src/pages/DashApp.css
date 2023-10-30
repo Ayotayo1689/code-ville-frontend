@@ -19,6 +19,28 @@
     border-radius: 6px;
     
 }
+.chat-big{
+    /* padding: 10px; */
+  
+    /* margin: 5px; */
+    width: 100%; 
+    
+    word-wrap: break-word;
+    clear: both;
+    
+}
+.message-big{
+    padding-top: 20px;
+      border-radius: 8px;
+    /* background: #ffffff; */
+    background:  linear-gradient(to bottom, rgba(187, 187, 188, 0.52),  rgba(255, 255, 255, 0.52), rgba(22, 198, 116, 0.73)),
+    url('../images/codeville.jpg');
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 120px;
+    overflow-y: scroll;
+    height: calc(100vh - 100px);
+}
 .edit-card{
     margin-top: 10px;
     background-color: #026156;
@@ -345,6 +367,83 @@ th, td{
     cursor: pointer;
     z-index: 1;
 }
+.rounded-full{
+    width: 40px;
+    height: 40px;
+}
+.rounded-full img{
+    width: 100%;
+    border-radius: 50%;
+}
+.chat{
+    display: flex;
+    /* margin-top: 20px; */
+    gap: 10px;
+    align-items: center;
+}
+.sender .chat-bubble{
+    background-color: #DCF8C6;
+}
+.receiver .chat-bubble{
+    background-color: #E0E0E0;
+}
+.sender {
+    float: right; /* Align sender's messages to the right */
+}
+
+.sender {
+    
+    flex-direction: row-reverse; 
+    align-items: last baseline;
+}
+.receiver {
+    align-items: last baseline;
+}
+
+.chat-end{
+   flex-direction: row-reverse;
+  float: right;
+  width: 80%;
+  align-items: end;
+}
+.chat-end .content{
+   text-align: right;
+   border: 2px solid blue;
+
+ }
+
+ .chat-header{
+    font-size: 13px;
+    font-weight: 500;
+    margin-right: 10px;
+}
+.chat-bubble{
+    background: #9fdcc27f;
+    padding:8px 13px;
+    border-radius: 20px;
+    width:fit-content;
+    /* max-width: 90%; */
+}
+
+.content{
+    /* min-width: 80%; */
+    max-width: 600px;
+    margin-bottom: 10px;
+}
+time{
+    color: #8e8b8b;
+     font-size: 10px;
+    margin-left: 6px;
+}
+
+ .chat-footer{
+    color: #8e8b8b;
+     font-size: 10px;
+    margin-right: 10px;
+}
+
+
+
 @media only screen and (max-width:884px) {
     .table-container{
         width: 100%;

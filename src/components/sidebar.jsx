@@ -9,7 +9,11 @@ import electricity from "../images/electricity.svg";
 
 
  const SideBarLink = [
-  
+  {
+    icon:data,
+    title:"Chat Room ",
+    path:"/chat-room"
+   }, 
   {
     icon:data,
     title:"Staffs ",

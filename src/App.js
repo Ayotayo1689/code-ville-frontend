@@ -7,6 +7,7 @@ import DataBundle from './pages/Databundle';
 import DataBundleDetails from './pages/DataDetails';
 import Electricity from './pages/Electricity';
 import MyTask from './pages/MyTask';
+import ChatRoom from './pages/ChatRoom';
 
 
 const  App = ()=> {
@@ -20,6 +21,7 @@ const  App = ()=> {
         <Route path="data_bundle/details" element={<DataBundleDetails />} />
         <Route path="tasks" element={<Electricity />} />
         <Route path="my-tasks" element={<MyTask />} />
+        <Route path="chat-room" element={<ChatRoom />} />
       </Routes>
     </div>
   );
