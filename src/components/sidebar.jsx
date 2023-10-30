@@ -1,32 +1,32 @@
 import DashIcon from "../images/dashboardicon.svg";
 import wallet from "../images/wallet.svg";
 import transfer from "../images/transfericon.svg";
-import savings from "../images/savingsicon.svg";
+import chatRoom from "../images/savingsicon.svg";
 import data from "../images/dadaicon.svg";
-import airtime from "../images/airtimeicon.svg";
-import cable from "../images/cable.svg";
-import electricity from "../images/electricity.svg";
+import teams from "../images/teams.svg";
+import task from "../images/cable.svg";
+import myTask from "../images/electricity.svg";
 
 
  const SideBarLink = [
  
   {
-    icon:data,
-    title:"Staffs ",
+    icon:teams,
+    title:"Teams ",
     path:"/data_bundle"
    },
    {
-    icon:wallet,
+    icon:task,
     title:"All Tasks",
     path:"/tasks"
    },
    {
-    icon:wallet,
+    icon:myTask,
     title:"My Tasks",
     path:"/my-tasks"
    },
    {
-    icon:data,
+    icon:chatRoom,
     title:"Chat Room ",
     path:"/chat-room"
    }

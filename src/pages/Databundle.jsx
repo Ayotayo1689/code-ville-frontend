@@ -156,7 +156,7 @@ export default function DataBundle() {
     <div className="dash-big">
           <div className="title">
             <div className="head">
-            Staffs
+            Teams
             </div>
             <Search>
             <SearchIconWrapper>
