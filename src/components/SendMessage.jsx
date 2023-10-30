@@ -18,16 +18,18 @@ const SendMessage = () => {
     const localCreatedAt = new Date();
     const hour = localCreatedAt.getHours();
     const minute = localCreatedAt.getMinutes();
+    const seconds = localCreatedAt.getSeconds();
+    
+
     
     // Conditional check to add leading zero if minute is less than 10
     const formattedMinute = minute < 10 ? `0${minute}` : minute;
+    const formattedSecs = seconds < 10 ? `0${seconds}` : seconds;
     
     const timeStamp = `${hour}:${formattedMinute}`;
 
- 
-const seconds = localCreatedAt.getSeconds();
 
-const currentTime = `${hour}:${formattedMinute}:${seconds}`;
+const currentTime = `${hour}:${formattedMinute}:${formattedSecs}`;
 console.log(currentTime); 
 
     console.log(timeStamp);
