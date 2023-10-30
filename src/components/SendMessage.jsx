@@ -24,6 +24,12 @@ const SendMessage = () => {
     
     const timeStamp = `${hour}:${formattedMinute}`;
 
+ 
+const seconds = localCreatedAt.getSeconds();
+
+const currentTime = `${hour}:${formattedMinute}:${seconds}`;
+console.log(currentTime); 
+
     console.log(timeStamp);
 
     const [currentUser, setCurrentUser] = useState({})
@@ -70,6 +76,7 @@ const SendMessage = () => {
                 text: value,
                 name: displayName,
                 createdAt: timeStamp,
+                sentAt: currentTime,
                 senderId: loggedInUser,
                 uid
             })
