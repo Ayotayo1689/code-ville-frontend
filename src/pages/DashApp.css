@@ -216,6 +216,7 @@
     padding: 10px 10px 10px 20px;
     display: flex;
     gap: 5px;
+    z-index: 99999;
     flex-direction: column;
     transition-duration: 1s ease;
 }
