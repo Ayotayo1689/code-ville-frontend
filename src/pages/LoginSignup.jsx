@@ -69,10 +69,14 @@ const LoginSignup = () => {
     try {
       const response = await axios.post(url, data );
       setLogInProcess(false)
+      
       const loggedInUser = response.data.data.id;
    
 
       localStorage.setItem("loggedInUser", loggedInUser)
+      if(response.data.data.isAdmin){
+        localStorage.setItem("codeville-admin", response.data.data.isAdmin)
+      }
     if(localStorage.getItem("loggedInUser")){
       const timeout = setTimeout(() => {
         navigate("/data_bundle");

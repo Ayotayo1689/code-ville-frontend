@@ -114,6 +114,8 @@ export default function MyTask() {
 
   const [selectedOptions, setSelectedOptions] = useState([]);
 
+  const isAdmin = localStorage.getItem("codeville-admin") 
+
     const fetchCoinData = async () => {
 
         const loggedInUser = localStorage.getItem("loggedInUser")
@@ -304,11 +306,13 @@ export default function MyTask() {
    <div className="" style={{
      position:"relative",height:"40px"
     }}>
-   <Button variant="contained" sx={{
+  {isAdmin && 
+       <Button variant="contained" sx={{
      position:"absolute",
      right:"0px",
      background:"#134E4A"
     }} onClick={handleOpen}>Create Task</Button>
+      }
    </div>
     <Modal
       aria-labelledby="transition-modal-title"
