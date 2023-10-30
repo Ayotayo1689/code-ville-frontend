@@ -156,13 +156,13 @@ const LoginSignup = () => {
 {
   page ? <div className="login">
         <h1>Welcome Back</h1>
-        <input
+        <input style={{background: "rgba(255, 255, 255, 0.515)"}}
          type="email"
          value={username}
          onChange={(e) => setUsername(e.target.value)}
          placeholder="Email"/>
         <div className="password">
-        <input type={password? "password": "text"}
+        <input style={{background: "rgba(255, 255, 255, 0.515)"}} type={password? "password": "text"}
          placeholder='Password...' 
   value={passWord}
   onChange={(e) => setPassWord(e.target.value)}
@@ -178,38 +178,38 @@ const LoginSignup = () => {
       <p className='p'>Don't have an account? <span onClick={switchPage}>Register</span> </p>
     </div>:<div className="login">
         <h1>Welcome to CodeVille</h1>
-        <input
+        <input style={{background: "rgba(255, 255, 255, 0.515)"}}
          type="text"
          value={firstName}
          onChange={(e) => setFirstName(e.target.value)}
          placeholder="First Name"/>
 
-        <input
+        <input style={{background: "rgba(255, 255, 255, 0.515)"}}
          type="text"
          value={lastName}
          onChange={(e) => setLastName(e.target.value)}
          placeholder="Last Name"/>
 
-        <input
+        <input style={{background: "rgba(255, 255, 255, 0.515)"}}
          type="email"
          value={email}
          onChange={(e) => setEmail(e.target.value)}
          placeholder="Email"/>
 
-          <input
+          <input style={{background: "rgba(255, 255, 255, 0.515)"}}
          type="text"
          value={phoneNo}
          onChange={(e) => setPhoneNo(e.target.value)}
          placeholder="Phone Number"/>
 
-        <input
+        <input style={{background: "rgba(255, 255, 255, 0.515)"}}
          type="text"
          value={department}
          onChange={(e) => setDepartment(e.target.value)}
          placeholder="Department"/>
 
         <div className="password">
-        <input type={password? "password": "text"}
+        <input style={{background: "rgba(255, 255, 255, 0.515)"}} type={password? "password": "text"}
          placeholder='Password...' 
   value={passWord}
   onChange={(e) => setPassWord(e.target.value)}
@@ -244,13 +244,13 @@ const LoginSignup = () => {
         <div className="login">
           <img src={Logo} alt="" />
                 <h1>Welcome back</h1>
-                <input
+                <input style={{background: "rgba(255, 255, 255, 0.515)"}}
                  type="email"
                  value={username}
                  onChange={(e) => setUsername(e.target.value)}
                  placeholder="Email"/>
                 <div className="password">
-                <input type={password? "password": "text"}
+                <input style={{background: "rgba(255, 255, 255, 0.515)"}} type={password? "password": "text"}
                  placeholder='Password...' 
           value={passWord}
           onChange={(e) => setPassWord(e.target.value)}
