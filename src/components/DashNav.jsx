@@ -55,7 +55,7 @@ const DashNav = () => {
     }
   return (
    <>
-    <div onClick={navOpen} className={navOpened ? "dash-nav dash-nav-open" : "dash-nav dash-nav-close"} style={{flex:"1",height:"100vh"}}  >
+    <div onClick={navOpen} className={navOpened ? "dash-nav dash-nav-open" : "dash-nav dash-nav-close"} style={{flex:"1",height:"100dvh"}}  >
         <img src={Logo} alt="" width="80%"   />
      {SideBarLink.map((item, index)=>{
       return(
