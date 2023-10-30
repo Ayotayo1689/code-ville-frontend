@@ -310,6 +310,22 @@ input::-webkit-inner-spin-button {
     style={{flex:1, minWidth:"250px"}} */
     /* style={{flex:1, minWidth:"250px"}} */
 }
+@media only screen and (max-width:1023px) {
+   
+    .left-child{
+        position: absolute;
+        top: 0;
+        /* /* height: 100%; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        /* background: rgba(255, 0, 0, 0.316); */
+        
+    }
+    
+}
+
 @media only screen and (max-width:884px) {
     .transaction-body{
         flex-direction: column;
@@ -319,6 +335,7 @@ input::-webkit-inner-spin-button {
         /* border: 2px solid red; */
         min-width: 260px;
     }
+   
     
 }
 @media only screen and (max-width:400px) {
@@ -335,10 +352,14 @@ input::-webkit-inner-spin-button {
         flex-direction: row;
     }
 }
-@media only screen and (max-width:500px) {
+@media only screen and (max-width:600px) {
  
     .task-row{
-    
-        min-width: 87vw;
+    scroll-snap-align: start ;
+        min-width: calc(100vw - 41px); 
+    }
+    .table-container{
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
     }
 }

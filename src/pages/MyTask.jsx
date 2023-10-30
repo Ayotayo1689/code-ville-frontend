@@ -19,7 +19,7 @@ import LoadingModal from '../components/LoadingModal';
 import { Base_url } from '../components/Url';
 import Staff from "../images/profile-icon.jpg"
 import TextField from '@mui/material/TextField';
-
+ 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -401,9 +401,9 @@ export default function MyTask() {
 
 
 
-          <div className='table-container'>
+        
 
-            <div className="" style={{display:"flex", gap:"20px"}}>
+            <div className="table-container" style={{display:"flex", gap:"20px"}}>
 
               <div className="task-row">
                <h4 style={{marginBottom:"10px", paddingLeft:"20px"}}> Open</h4>
@@ -526,7 +526,7 @@ export default function MyTask() {
                 )
                )}
 
-              </div>
+            
 
             </div>
 
