@@ -151,7 +151,6 @@ export default function DataBundle() {
   return (
 
     <div className='dash'>
-       {apiErr ? <SessionModal/> : ""}
     <DashNav />
     <div className="dash-big">
           <div className="title">

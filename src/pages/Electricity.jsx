@@ -19,6 +19,10 @@ import LoadingModal from '../components/LoadingModal';
 import { Base_url } from '../components/Url';
 import Staff from "../images/profile-icon.jpg"
 import TextField from '@mui/material/TextField';
+import okay from "../images/okay.svg"
+
+import loadingSpin from "../images/loadeing.svg"
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -84,7 +88,8 @@ export default function Electricity() {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const [apiErr, setApiErr] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [sucess, setSucess] = useState(false);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -220,7 +225,7 @@ export default function Electricity() {
 
   const handleSubmit = async () => {
     try {
-      // Send a POST request to assign the task
+      setLoading(true)
       const response = await axios.post(
         `${Base_url()}/users/${formData.assigneeId}/add-task`,
         {
@@ -230,6 +235,9 @@ export default function Electricity() {
       );
 
       if (response.status === 201) {
+        setLoading(false)
+        setSucess(true)
+
         fetchCoinData();
         // Optionally, reset the form fields
         setFormData({
@@ -237,6 +245,13 @@ export default function Electricity() {
           description: '',
           dueDate: '',
         });
+        setTimeout(() => {
+          handleClose()
+        }, 2000); 
+        setTimeout(() => {
+          setSucess(false)
+        }, 3000); 
+        
       } else {
         console.error('Failed to assign task');
       }
@@ -271,7 +286,6 @@ export default function Electricity() {
 
 
     <div className='dash'>
-        {apiErr ? <SessionModal/> : ""}
     <DashNav />
     <div className="dash-big">
          <div className="title">
@@ -318,73 +332,91 @@ export default function Electricity() {
       <Fade in={open}>
         <Box sx={style}>
         <div onSubmit={handleSubmit}>
-      <Box
-        component="form"
-        sx={{
-          '& .MuiTextField-root': { m: 1, width: '25ch' },
+        {
+            loading &&  <div className="" style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",gap:"20px", minHeight:"200px"}}>
+            <img src={loadingSpin} alt="loading" />
+            {/* <h5>Task assignes successfully</h5> */}
+
+          </div>
+          }
+          {
+             sucess &&
+             <div className="" style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",gap:"20px"}}>
+               <img src={okay} alt="sucess" />
+               <h5>Task assignes successfully</h5>
+ 
+             </div>
+          }
+
+          { !loading && !sucess ? 
+            <Box
+            component="form"
+            sx={{
+              '& .MuiTextField-root': { m: 1, width: '25ch' },
+            }}
+            noValidate
+            autoComplete="off"
+          >
+            <div>
+            <div>
+      <select
+        id="assigneeId"
+        name="assigneeId"
+        value={formData.assigneeId}
+        onChange={handleInputChange}
+        style={{
+          padding: '8px',
+          fontSize: '14px',
+          borderRadius: '5px',
+          border: '1px solid #ccc',
+          width: '100%',
         }}
-        noValidate
-        autoComplete="off"
       >
-        <div>
-        <div>
-  <select
-    id="assigneeId"
-    name="assigneeId"
-    value={formData.assigneeId}
-    onChange={handleInputChange}
-    style={{
-      padding: '8px',
-      fontSize: '14px',
-      borderRadius: '5px',
-      border: '1px solid #ccc',
-      width: '100%',
-    }}
-  >
-    <option value="">Assign Task To</option>
-    {allId.map((staff) => (
-      <option key={staff.id} value={staff.id}>
-        {staff.firstName}
-      </option>
-    ))}
-  </select>
-</div>
-
-          <TextField
-            id="outlined-multiline-static"
-            label="Description"
-            multiline
-            rows={4}
-            value={formData.description}
-            name="description"
-            onChange={handleInputChange}
-          />
-          <div>
-  <label htmlFor="dueDate" style={{ fontSize: '16px', marginBottom: '10px', display: 'block' }}>
-    Due Date:
-  </label>
-  <input
-    type="date"
-    id="dueDate"
-    name="dueDate"
-    value={formData.dueDate}
-    onChange={handleInputChange}
-    style={{
-      padding: '8px',
-      fontSize: '14px',
-      borderRadius: '5px',
-      border: '1px solid #ccc',
-      width: '100%',
-    }}
-  />
-</div>
-
-        </div>
-        <Button variant="contained" sx={{
-     background:"#134E4A",
-     marginTop:"20px"
-    }} onClick={handleSubmit}>Add Task</Button>
-      </Box>
+        <option value="">Assign Task To</option>
+        {allId.map((staff) => (
+          <option key={staff.id} value={staff.id}>
+            {staff.firstName}
+          </option>
+        ))}
+      </select>
+    </div>
+    
+              <TextField
+                id="outlined-multiline-static"
+                label="Description"
+                multiline
+                rows={4}
+                value={formData.description}
+                name="description"
+                onChange={handleInputChange}
+              />
+              <div>
+      <label htmlFor="dueDate" style={{ fontSize: '16px', marginBottom: '10px', display: 'block' }}>
+        Due Date:
+      </label>
+      <input
+        type="date"
+        id="dueDate"
+        name="dueDate"
+        value={formData.dueDate}
+        onChange={handleInputChange}
+        style={{
+          padding: '8px',
+          fontSize: '14px',
+          borderRadius: '5px',
+          border: '1px solid #ccc',
+          width: '100%',
+        }}
+      />
+    </div>
+    
+            </div>
+            <Button variant="contained" sx={{
+         background:"#134E4A",
+         marginTop:"20px"
+        }} onClick={handleSubmit}>Add Task</Button>
+          </Box> : null
+          }
     </div>
         </Box>
       </Fade>
