@@ -5,10 +5,35 @@ import axios from 'axios'
 import { Base_url } from './Url'
 
 const Message = ({message}) => {
-    
+    const [data, setData] = useState([]);
+
 
 
   const loggedInUser = localStorage.getItem("loggedInUser")
+  const fetchCoinData = async () => {
+
+   
+
+  const url = `${Base_url()}/users/${loggedInUser}`
+
+
+
+  axios.get(url)
+  .then(response => {
+  // setLoading(false)
+  setData(response.data.data)
+  })
+  .catch(error => {
+  });
+
+};
+
+useEffect(() => {
+  
+
+  fetchCoinData();
+  
+}, []);
 
   
 
@@ -18,7 +43,7 @@ const Message = ({message}) => {
         <div className={message.senderId === loggedInUser ? "chat sender" : "chat receiver"}>
             <div className="chat-image avatar">
                 <div className="rounded-full">
-                    <img src={ message.pic ? message.pic : Staff} alt="" /> 
+                    <img src={data.profilePic ? data.profilePic : Staff} alt="" /> 
                </div>
             </div>
            <div className="content">

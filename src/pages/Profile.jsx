@@ -156,58 +156,95 @@ export default function MyTask() {
   
     // Function to handle file selection
 
-const handleFileSelect = (e) => {
+// const handleFileSelect = async (e) => {
    
+//   const selectedFile = e.target.files[0];
+
+//   if (selectedFile.name) {
+//     handleOpen()
+//     setLoading(true)
+
+//     const imageRef = ref(storage, `images/${selectedFile.name + v4()}`);
+
+//     uploadBytes(imageRef, selectedFile)
+//       .then(() => {
+        
+//         setImageSelected(true)
+
+//         // Once the upload is successful, get the download URL
+//         getDownloadURL(imageRef)
+//           .then( async (downloadURL) => {
+//             try {
+//                 const response = await axios.put(
+//                   `${Base_url()}/users/${loggedinUser}/profile_pic`,
+//                   { profilePic: downloadURL }
+//                 );
+                
+//               setLoading(false)
+//               setImageSelected(false)
+//               setImageUploaded(true)
+//               await  fetchCoinData();
+               
+//               } catch (error) {
+//                 setLoading(false)
+//                 setImageSelected(false)
+//                 setImageErr(true)
+//               }
+              
+//           })
+          
+//           .catch((error) => {
+//             setLoading(false)
+//             setImageSelected(false)
+//             setImageErr(true)
+//           });
+//       })
+//       .catch((error) => {
+//         setLoading(false)
+//         setImageSelected(false)
+//         setImageErr(true)
+//       });
+//   } else {
+//     console.log('No file selected');
+//   }
+// };
+
+
+const handleFileSelect = async (e) => {
   const selectedFile = e.target.files[0];
 
-  if (selectedFile.name) {
-    handleOpen()
-    setLoading(true)
+  if (selectedFile && selectedFile.name) {
+    try {
+      handleOpen();
+      setLoading(true);
 
-    const imageRef = ref(storage, `images/${selectedFile.name + v4()}`);
+      const imageRef = ref(storage, `images/${selectedFile.name + v4()}`);
 
-    uploadBytes(imageRef, selectedFile)
-      .then(() => {
-        
-        setImageSelected(true)
+      await uploadBytes(imageRef, selectedFile);
 
-        // Once the upload is successful, get the download URL
-        getDownloadURL(imageRef)
-          .then((downloadURL) => {
-            try {
-                const response = axios.put(
-                  `${Base_url()}/users/${loggedinUser}/profile_pic`,
-                  { profilePic: downloadURL }
-                );
-                fetchCoinData();
-                setLoading(false)
-                setImageSelected(false)
-                setImageUploaded(true)
-               
-              } catch (error) {
-                setLoading(false)
-                setImageSelected(false)
-                setImageErr(true)
-              }
-              
-          })
-          .catch((error) => {
-            setLoading(false)
-            setImageSelected(false)
-            setImageErr(true)
-          });
-      })
-      .catch((error) => {
-        setLoading(false)
-        setImageSelected(false)
-        setImageErr(true)
-      });
+      const downloadURL = await getDownloadURL(imageRef);
+
+      await axios.put(
+        `${Base_url()}/users/${loggedinUser}/profile_pic`,
+        { profilePic: downloadURL }
+      );
+
+      setLoading(false);
+      setImageSelected(false);
+      setImageUploaded(true);
+      await fetchCoinData();
+    } catch (error) {
+      console.error("Error occurred:", error);
+      setLoading(false);
+      setImageSelected(false);
+      setImageErr(true);
+    }
   } else {
     console.log('No file selected');
   }
 };
 
-
+ 
 
 
 
@@ -269,7 +306,7 @@ const handleFileSelect = (e) => {
                     <div className="profile-img"  style={{
           background: "#fff"
         }}>
-    {data.profilePic === "" ?  <img src={Staff} alt="" /> :   <img src={data.profilePic} alt="" /> }
+      <img src={ data.profilePic === "" ?  Staff : data.profilePic } alt="" />
       <div
         className="upload-icon"
         style={{
