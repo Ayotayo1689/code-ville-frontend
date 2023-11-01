@@ -13,7 +13,7 @@ import profile from "../images/profile.svg";
  
   {
     icon:teams,
-    title:"Teams ",
+    title:"Team ",
     path:"/data_bundle"
    },
    {
