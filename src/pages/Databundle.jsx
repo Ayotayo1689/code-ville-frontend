@@ -190,7 +190,7 @@ export default function DataBundle() {
          <>
             <tr key={user.id} className="coin tableHover"  >
         <td style={{paddingLeft:"0px",paddingLeft:"0px",display:"flex",alignItems:"center",gap:"6px"}}>{index+1}</td>
-        <td style={{paddingLeft:"0px",paddingLeft:"0px",}}><img src={Staff} alt={"bundle logo"} width={"50px"} style={{borderRadius:"50%"}} /> <span style={{position:"relative",bottom:"20px"}}>{user.firstName} </span></td>
+        <td style={{paddingLeft:"0px",paddingLeft:"0px",}}><img src={ user.profilePic ? user.profilePic : Staff} alt={"bundle logo"} width={"50px"} style={{borderRadius:"50%"}} /> <span style={{position:"relative",bottom:"20px"}}>{user.firstName} </span></td>
         <td style={{paddingLeft:"0px",marginLeft:"0px"}}>{user.department}</td>
         <td style={{paddingLeft:"0px",marginLeft:"0px"}}>{user.email}</td>
         <td style={{paddingLeft:"0px",marginLeft:"0px"}}>{user.phoneNo}</td>

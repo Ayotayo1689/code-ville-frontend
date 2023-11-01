@@ -18,8 +18,8 @@ const Message = ({message}) => {
         <div className={message.senderId === loggedInUser ? "chat sender" : "chat receiver"}>
             <div className="chat-image avatar">
                 <div className="rounded-full">
-                    <img src={Staff} alt="hellos" />
-                </div>
+                    <img src={ message.pic ? message.pic : Staff} alt="" /> 
+               </div>
             </div>
            <div className="content">
            <div className="chat-header">

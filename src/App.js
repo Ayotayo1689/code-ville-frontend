@@ -8,6 +8,7 @@ import DataBundleDetails from './pages/DataDetails';
 import Electricity from './pages/Electricity';
 import MyTask from './pages/MyTask';
 import ChatRoom from './pages/ChatRoom';
+import Profile from './pages/Profile';
 
 
 const  App = ()=> {
@@ -22,6 +23,7 @@ const  App = ()=> {
         <Route path="tasks" element={<Electricity />} />
         <Route path="my-tasks" element={<MyTask />} />
         <Route path="chat-room" element={<ChatRoom />} />
+        <Route path="profile" element={<Profile />} />
       </Routes>
     </div>
   );

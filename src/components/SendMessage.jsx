@@ -24,12 +24,17 @@ const SendMessage = () => {
     
     // Conditional check to add leading zero if minute is less than 10
     const formattedMinute = minute < 10 ? `0${minute}` : minute;
+    const formattedHour = hour < 10 ? `0${hour}` : hour;
     const formattedSecs = seconds < 10 ? `0${seconds}` : seconds;
     
-    const timeStamp = `${hour}:${formattedMinute}`;
+    const timeStamp = `${formattedHour}:${formattedMinute}`;
+
+    const fullDate = localCreatedAt.toISOString()
 
 
-const currentTime = `${hour}:${formattedMinute}:${formattedSecs}`;
+
+
+const currentTime = `${formattedHour}:${formattedMinute}:${formattedSecs}`;
 console.log(currentTime); 
 
     console.log(timeStamp);
@@ -72,11 +77,14 @@ console.log(currentTime);
         try{
             const uid = currentUser.id
             const displayName = currentUser.data.firstName
+            const displayPic = currentUser.data.profilePic
            
 
             await addDoc(collection(db, "messages"), {
                 text: value,
                 name: displayName,
+                pic: displayPic,
+                date: fullDate,
                 createdAt: timeStamp,
                 sentAt: currentTime,
                 senderId: loggedInUser,

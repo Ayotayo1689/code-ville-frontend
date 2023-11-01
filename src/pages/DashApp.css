@@ -378,9 +378,9 @@ th, td{
 }
 .chat{
     display: flex;
-    /* margin-top: 20px; */
+    width: 80%;
     gap: 10px;
-    align-items: center;
+    align-items: flex-end;
 }
 .sender .chat-bubble{
     background-color: #DCF8C6;
@@ -389,17 +389,10 @@ th, td{
     background-color: #E0E0E0;
 }
 .sender {
+    flex-direction: row-reverse; 
     float: right; /* Align sender's messages to the right */
 }
 
-.sender {
-    
-    flex-direction: row-reverse; 
-    align-items: last baseline;
-}
-.receiver {
-    align-items: last baseline;
-}
 
 .chat-end{
    flex-direction: row-reverse;
@@ -414,6 +407,7 @@ th, td{
  }
 
  .chat-header{
+    width: fit-content;
     font-size: 13px;
     font-weight: 500;
     margin-right: 10px;
@@ -427,11 +421,16 @@ th, td{
 }
 
 .content{
-    /* min-width: 80%; */
+   display: flex;
+   flex-direction: column;
     max-width: 60%;
-    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.sender .content{
+align-items: flex-end;
 }
 time{
+    width: fit-content;
     color: #8e8b8b;
      font-size: 10px;
     margin-left: 6px;

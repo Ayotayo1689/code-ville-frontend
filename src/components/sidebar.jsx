@@ -6,6 +6,7 @@ import data from "../images/dadaicon.svg";
 import teams from "../images/teams.svg";
 import task from "../images/cable.svg";
 import myTask from "../images/electricity.svg";
+import profile from "../images/profile.svg";
 
 
  const SideBarLink = [
@@ -29,6 +30,11 @@ import myTask from "../images/electricity.svg";
     icon:chatRoom,
     title:"Chat Room ",
     path:"/chat-room"
+   },
+   {
+    icon: profile,
+    title:"Profile ",
+    path:"/profile"
    }
 ];
 

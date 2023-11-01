@@ -21,7 +21,7 @@ const ChatBox = () => {
    
    useEffect(()=>{
     const q = query(collection(db, "messages"),
-    orderBy("sentAt"),
+    orderBy("date"),
     limit(50)
     
     );
@@ -39,7 +39,7 @@ return ()=> unsubscribe;
    }, [])
     
   return (
-    <div className='message-big' >
+    <div className='message-big' style={{padding:"20px 10px"}} >
         {messages.map(message =>(
             <Message key={message.id} message={message} />
         ))}
