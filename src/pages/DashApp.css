@@ -447,10 +447,10 @@ time{
 @media only screen and (max-width:884px) {
     .table-container{
         width: 100%;
-        overflow-y: visible; /* Hide horizontal scrollbar */
-  overflow-x: scroll;
+        /* overflow-y: visible; Hide horizontal scrollbar */
+  /* overflow-x: scroll; */
 
-        min-height: 95vh;
+        /* min-height: 95vh; */
     }
   table{
     width: 800px;

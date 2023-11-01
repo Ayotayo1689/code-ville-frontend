@@ -261,7 +261,7 @@ const handleFileSelect = (e) => {
 
         
 
-            <div className="table-container" >
+            <div className="table-container-profile" >
                 <div className="banner" style={{ height:"30vh"}}>
                     <h1 >{`${data.firstName} ${data.lastName}`}</h1>
                     <p>{data.department} department</p>
