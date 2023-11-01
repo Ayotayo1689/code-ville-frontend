@@ -38,6 +38,7 @@ const DashNav = () => {
 
   const logOut = ()=>{
     localStorage.removeItem("loggedInUser")
+    localStorage.removeItem("codeville-admin")
     navigate('/')
   }
   const [activeItem, setActiveItem] = useState('');

@@ -300,8 +300,8 @@ const handleFileSelect = (e) => {
                     <div className="about">
                         <h2>About</h2>
                         <p>
-                            i'm {`${data.firstName} ${data.lastName}`} in the {data.department} department at codeVille.
-                            bringing my best to the success of the company
+                            I'm {`${data.firstName} ${data.lastName}`} in the {data.department} department at codeVille.
+                            bringing my best to the success of the company.
                         </p>
                         <div className="contacts"> <MailOutlineIcon/> <span>{data.email}</span></div>
                         <div className="contacts"> <LocalPhoneOutlinedIcon/> <span>{data.phoneNo}</span></div>
