@@ -129,16 +129,18 @@ export default function MyTask() {
   const [imageUploaded, setImageUploaded] = useState(false);
   const [loading, setLoading] = useState(false);
   const [imageErr, setImageErr] = useState(false);
-  const [sucess, setSucess] = useState(false);
+  const [openPic, setopenPic] = useState(true);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () =>{
+  
     setOpen(false)
     setLoading(false)
     setImageSelected(false)
     setImageUploaded(false)
-               
+    setopenPic(true)         
   };
+  
   function changeValue(val) {
     changeDate(val);
  }
@@ -212,9 +214,11 @@ export default function MyTask() {
 
 const handleFileSelect = async (e) => {
   const selectedFile = e.target.files[0];
-
+  setopenPic(false)
   if (selectedFile && selectedFile.name) {
     try {
+      
+
       handleOpen();
       setLoading(true);
 
@@ -228,6 +232,7 @@ const handleFileSelect = async (e) => {
         `${Base_url()}/users/${loggedinUser}/profile_pic`,
         { profilePic: downloadURL }
       );
+      // setopenPic(false)
 
       setLoading(false);
       setImageSelected(false);
@@ -240,7 +245,7 @@ const handleFileSelect = async (e) => {
       setImageErr(true);
     }
   } else {
-    console.log('No file selected');
+    setopenPic(true)
   }
 };
 
@@ -306,7 +311,7 @@ const handleFileSelect = async (e) => {
                     <div className="profile-img"  style={{
           background: "#fff"
         }}>
-      <img src={ data.profilePic === "" ?  Staff : data.profilePic } alt="" />
+      <img src={ data.profilePic === "" ?  Staff : data.profilePic } alt="" onClick={handleOpen}   />
       <div
         className="upload-icon"
         style={{
@@ -381,6 +386,14 @@ const handleFileSelect = async (e) => {
     >
       <Fade in={open}>
         <Box sx={style}>
+          {
+            openPic &&       <img src={ data.profilePic === "" ?  Staff : data.profilePic } alt="" style={{
+              objectFit: "cover", 
+              maxWidth: "100%",   
+              maxHeight: "100%"   
+            }}/>
+
+          }
       
           {
             loading &&  <div className="" style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",gap:"20px", minHeight:"200px"}}>
@@ -419,3 +432,4 @@ const handleFileSelect = async (e) => {
     </>    
   );
 }
+ 

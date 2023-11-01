@@ -142,12 +142,10 @@ export default function DataBundle() {
   // const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
   const Items = data;
-    const currentItems = Items.slice(indexOfFirstItem, indexOfLastItem);
+    const currentItems = Items
 
   // Change page
-  const paginate = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
+ 
   return (
 
     <div className='dash'>
@@ -190,7 +188,14 @@ export default function DataBundle() {
          <>
             <tr key={user.id} className="coin tableHover"  >
         <td style={{paddingLeft:"0px",paddingLeft:"0px",display:"flex",alignItems:"center",gap:"6px"}}>{index+1}</td>
-        <td style={{paddingLeft:"0px",paddingLeft:"0px",}}><img src={ user.profilePic ? user.profilePic : Staff} alt={"bundle logo"} width={"50px"} style={{borderRadius:"50%"}} /> <span style={{position:"relative",bottom:"20px"}}>{user.firstName} </span></td>
+        <td style={{paddingLeft:"0px",paddingLeft:"0px",}}><img src={ user.profilePic ? user.profilePic : Staff} alt={"bundle logo"} width={"40px"} height={"40px"}  
+         style={{
+          marginRight:"10px",
+    borderRadius: "50%",
+    objectFit: "cover", 
+    maxWidth: "100%",   
+    maxHeight: "100%"   
+  }}/> <span style={{position:"relative",bottom:"20px"}}>{user.firstName} </span></td>
         <td style={{paddingLeft:"0px",marginLeft:"0px"}}>{user.department}</td>
         <td style={{paddingLeft:"0px",marginLeft:"0px"}}>{user.email}</td>
         <td style={{paddingLeft:"0px",marginLeft:"0px"}}>{user.phoneNo}</td>
@@ -222,25 +227,7 @@ export default function DataBundle() {
  </table>
  
  </div>
-        <div className="pagination" style={{fontWeight:"500"}}>
-        
-        <p>Page</p>
-        <div className=""><span style={{border:"1px solid green", padding:"5px 30px", borderRadius:"3px"}}>{currentPage * itemsPerPage }</span> of {data.length}</div>
-        
-        <button className='next-prev' style={{display:"flex",justifyContent:"center",alignItems:"ceter",background:"#134E4A", border:"none",padding:"5px 0 5px 10px"}}
-          onClick={() => paginate(currentPage - 1)}
-          disabled={currentPage === 1}
-        >
-          <ArrowBackIosIcon style={{ color: 'white' }} />
-        </button>
-        
-        <button className='next-prev' style={{display:"flex",justifyContent:"center",alignItems:"ceter",background:"#134E4A", border:"none",padding:"5px"}}
-          onClick={() => paginate(currentPage + 1)}
-          disabled={indexOfLastItem >= data.length}
-        >
-         <ArrowForwardIosIcon style={{ color: 'white' }} />
-        </button>
-        </div>
+       
       </div>
     </div> 
 
