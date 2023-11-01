@@ -444,6 +444,13 @@ export default function MyTask() {
 
               <div className="task-row">
                <h4 style={{marginBottom:"10px", paddingLeft:"20px"}}> Open</h4>
+               {data.filter(task => task.state === 'open').length < 1 && (
+                  <div className="task-box-empty" style={{minHeight:"100px", marginBottom:"20px", width:"100%",  borderRadius:"9px",padding:"10px"}}>
+                  
+                    
+                  </div>
+                )
+               }
                {data.map((task, index)=>
                 task.state === "open" && (
                   <div className="task-box" style={{minHeight:"100px", marginBottom:"20px", width:"100%",  borderRadius:"9px",padding:"10px"}}>
@@ -474,6 +481,13 @@ export default function MyTask() {
               </div>
               <div className="task-row">
                 <h4 style={{marginBottom:"10px", paddingLeft:"20px"}}>In-Progress</h4>
+                {data.filter(task => task.state === 'in-progress').length < 1 && (
+                  <div className="task-box-empty" style={{minHeight:"100px", marginBottom:"20px", width:"100%",  borderRadius:"9px",padding:"10px"}}>
+                  
+                    
+                  </div>
+                )
+               }
                 {data.map((task, index)=>
                 task.state === "in-progress" && (
                    <div className="task-box" style={{minHeight:"100px", marginBottom:"20px", width:"100%",  borderRadius:"9px",padding:"10px"}}>
@@ -505,6 +519,13 @@ export default function MyTask() {
               </div>
               <div className="task-row">
                <h4 style={{marginBottom:"10px", paddingLeft:"20px"}}> Done</h4>
+               {data.filter(task => task.state === 'done').length < 1 && (
+                  <div className="task-box-empty" style={{minHeight:"100px", marginBottom:"20px", width:"100%",  borderRadius:"9px",padding:"10px"}}>
+                  
+                    
+                  </div>
+                )
+               }
                {data.map((task, index)=>
                 task.state === "done" && (
                    <div className="task-box" style={{minHeight:"100px", marginBottom:"20px", width:"100%",  borderRadius:"9px",padding:"10px"}}>
@@ -535,6 +556,13 @@ export default function MyTask() {
               </div>
               <div className="task-row">
                 <h4 style={{marginBottom:"10px", paddingLeft:"20px"}}>Tested</h4>
+                {data.filter(task => task.state === 'tested').length < 1 && (
+                  <div className="task-box-empty" style={{minHeight:"100px", marginBottom:"20px", width:"100%",  borderRadius:"9px",padding:"10px"}}>
+                  
+                    
+                  </div>
+                )
+               }
                 {data.map((task, index)=>
                 task.state === "tested" && (
                    <div className="task-box" style={{minHeight:"100px", marginBottom:"20px", width:"100%",  borderRadius:"9px",padding:"10px"}}>

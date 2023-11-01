@@ -429,12 +429,19 @@ export default function Electricity() {
 
             <div className="" style={{display:"flex", gap:"20px"}}>
 
-              <div  className="task-row">
+            <div className="task-row">
                <h4 style={{marginBottom:"10px", paddingLeft:"20px"}}> Open</h4>
+               {data.filter(task => task.state === 'open').length < 1 && (
+                  <div className="task-box-empty" style={{minHeight:"100px", marginBottom:"20px", width:"100%",  borderRadius:"9px",padding:"10px"}}>
+                  
+                    
+                  </div>
+                )
+               }
                {data.map((task, index)=>
                 task.state === "open" && (
                   <div className="task-box" style={{minHeight:"100px", marginBottom:"20px", width:"100%",  borderRadius:"9px",padding:"10px"}}>
-                    <p style={{color:"black", marginBottom:'20px'}}>{task.description.slice(0, 30)}...</p>
+                    <p style={{color:"black", marginBottom:'20px'}}>{task.description}</p>
                     <div style={{display:"flex", gap:"10px", alignItems:"center"}}>
                     <select
                 name="cars"
@@ -459,12 +466,19 @@ export default function Electricity() {
                 )
                )}
               </div>
-              <div  className="task-row">
+              <div className="task-row">
                 <h4 style={{marginBottom:"10px", paddingLeft:"20px"}}>In-Progress</h4>
+                {data.filter(task => task.state === 'in-progress').length < 1 && (
+                  <div className="task-box-empty" style={{minHeight:"100px", marginBottom:"20px", width:"100%",  borderRadius:"9px",padding:"10px"}}>
+                  
+                    
+                  </div>
+                )
+               }
                 {data.map((task, index)=>
                 task.state === "in-progress" && (
                    <div className="task-box" style={{minHeight:"100px", marginBottom:"20px", width:"100%",  borderRadius:"9px",padding:"10px"}}>
-                    <p style={{color:"black", marginBottom:'20px'}}>{task.description.slice(0, 30)}...</p>
+                    <p style={{color:"black", marginBottom:'20px'}}>{task.description}</p>
                     <div style={{display:"flex", gap:"10px", alignItems:"center"}}>
                     <select
                 name="cars"
@@ -490,12 +504,19 @@ export default function Electricity() {
                )}
                 
               </div>
-              <div  className="task-row">
+              <div className="task-row">
                <h4 style={{marginBottom:"10px", paddingLeft:"20px"}}> Done</h4>
+               {data.filter(task => task.state === 'done').length < 1 && (
+                  <div className="task-box-empty" style={{minHeight:"100px", marginBottom:"20px", width:"100%",  borderRadius:"9px",padding:"10px"}}>
+                  
+                    
+                  </div>
+                )
+               }
                {data.map((task, index)=>
                 task.state === "done" && (
                    <div className="task-box" style={{minHeight:"100px", marginBottom:"20px", width:"100%",  borderRadius:"9px",padding:"10px"}}>
-                    <p style={{color:"black", marginBottom:'20px'}}>{task.description.slice(0, 30)}...</p>
+                    <p style={{color:"black", marginBottom:'20px'}}>{task.description}</p>
                     <div style={{display:"flex", gap:"10px", alignItems:"center"}}>
                     <select
                 name="cars"
@@ -520,12 +541,19 @@ export default function Electricity() {
                 )
                )}
               </div>
-              <div  className="task-row">
+              <div className="task-row">
                 <h4 style={{marginBottom:"10px", paddingLeft:"20px"}}>Tested</h4>
+                {data.filter(task => task.state === 'tested').length < 1 && (
+                  <div className="task-box-empty" style={{minHeight:"100px", marginBottom:"20px", width:"100%",  borderRadius:"9px",padding:"10px"}}>
+                  
+                    
+                  </div>
+                )
+               }
                 {data.map((task, index)=>
                 task.state === "tested" && (
                    <div className="task-box" style={{minHeight:"100px", marginBottom:"20px", width:"100%",  borderRadius:"9px",padding:"10px"}}>
-                    <p style={{color:"black", marginBottom:'20px'}}>{task.description.slice(0, 30)}...</p>
+                    <p style={{color:"black", marginBottom:'20px'}}>{task.description}</p>
                     <div style={{display:"flex", gap:"10px", alignItems:"center"}}>
                     <select
                 name="cars"
@@ -549,7 +577,6 @@ export default function Electricity() {
                </div>
                 )
                )}
-
               </div>
 
             </div>

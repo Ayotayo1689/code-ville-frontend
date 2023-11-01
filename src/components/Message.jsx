@@ -43,7 +43,12 @@ useEffect(() => {
         <div className={message.senderId === loggedInUser ? "chat sender" : "chat receiver"}>
             <div className="chat-image avatar">
                 <div className="rounded-full">
-                    <img src={data.profilePic ? data.profilePic : Staff} alt="" /> 
+                    <img src={data.profilePic ? data.profilePic : Staff} alt=""  style={{
+    borderRadius: "50%",
+    objectFit: "cover", 
+    // maxWidth: "100%",   
+    // maxHeight: "100%"   
+  }} /> 
                </div>
             </div>
            <div className="content">
